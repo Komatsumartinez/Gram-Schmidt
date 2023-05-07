@@ -38,3 +38,12 @@ let rec gramSchmidtRec (inputVectors: Vector list) (outputVectors: Vector list) 
 
 let gramSchmidt (inputVectors: Vector list) =
     List.rev (gramSchmidtRec inputVectors [])
+    
+let v1 = [| 1.0; 2.0; 3.0 |]
+let v2 = [| 4.0; 5.0; 6.0 |]
+let v3 = [| 7.0; 8.0; 9.0 |]
+let inputVectors = [v1; v2; v3]
+
+let outputVectors = gramSchmidt inputVectors
+printfn "Output vectors:"
+outputVectors |> List.iter (fun v -> printfn "%A" v)
